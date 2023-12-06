@@ -27,7 +27,7 @@ public class GoingInside : MonoBehaviour
             
             // openDoor.Close();
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
             
 
         }

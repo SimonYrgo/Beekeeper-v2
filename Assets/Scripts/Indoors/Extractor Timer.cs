@@ -71,7 +71,7 @@ public class ExtractorTimer : MonoBehaviour
 
                 changeHoneyColor.ChangeColor();
 
-               Invoke(nameof(LoadEndScene), 3f);
+               Invoke(nameof(LoadEndScene), 2f);
             }
 
         }
