@@ -59,7 +59,7 @@ public class ExtractorTimer : MonoBehaviour
             extractorSpeedControl.gameObject.SetActive(true);
 
             totalTime -= Time.deltaTime * (1 + slider.value -sliderDefautValue); // så som inställt nu så blir slidern 0 i värde och vi lägger till1 för att den ska rör sig alls på klockan
-            timerText.text = Mathf.Round(totalTime).ToString();
+            timerText.text = "Time left:  " + Mathf.Round(totalTime).ToString();
 
             if (totalTime <= 0) // måste vara <= för time.Deltatime kan bli mindre än 0 beroende på när vår funktion kallas
             {

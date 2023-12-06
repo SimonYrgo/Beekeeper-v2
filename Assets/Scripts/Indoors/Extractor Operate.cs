@@ -53,7 +53,7 @@ public class ExtractorOperate : MonoBehaviour
 
             currentLerpTime = 0f; // If lerping is started, initialize the lerp time and duration
 
-            messageBoard.text = "Extracting Honey, Time Left:"; // samma här - funkar bara en millisekund
+            messageBoard.text = "Extracting Honey"; // samma här - funkar bara en millisekund
 
             extractorInteract.framesLoaded = 0; // Enda sättet jag kom på just nu att få bort meddellandet- "Press P to Start Extractor"
 
