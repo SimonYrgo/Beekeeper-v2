@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public Slider slider; // Assign your panel in the Inspector // Kan ju lika gärna vara en slider
+    public Slider slider; 
 
     public TMP_Text pauseText;
 
@@ -15,20 +15,20 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Förstör inte detta gameobject när en ny scen laddas
        
 
 
 
-        if (slider != null) //Om det finns det ett gameobject i pausePanel sloten här avaktivera den
+        if (slider != null) //Om det finns det ett gameobject  i pausePanel-sloten här: 
         {
             
-            slider.gameObject.SetActive(false);
+            slider.gameObject.SetActive(false);           // avaktivera dessa
             pauseText.gameObject.SetActive(false) ;
             cameraSpeedText.gameObject.SetActive(false);
 
 
-            slider.onValueChanged.AddListener(ChangeCameraSpeed);
+            slider.onValueChanged.AddListener(ChangeCameraSpeed); // om sliderns värde ändras (onValueChanged = bool) > AddListener kollar till vad värdet ändras > Returnerar värde (och kallar metoden) ChangeCameraSpeed?  
         }
     }
 
@@ -39,23 +39,31 @@ public class PauseMenu : MonoBehaviour
             TogglePauseMenu();
         }
 
-
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Time.timeScale == 0)
         {
-            slider.value = slider.value + 1f;
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                slider.value = slider.value + 1f;
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                slider.value = slider.value - 1f;
+
+            }
 
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            slider.value = slider.value - 1f;
-
-        }
     }
+
+
+
+        
 
     void TogglePauseMenu()
     {
-        if (slider != null)  // Om du har ett gameObject i pausepanel sloten gör detta (if-sats för att jag inte ska få error) 
+        if (slider != null)  // Om du har ett gameObject i pausepanel sloten gör detta (if-sats för att jag inte ska få error om jag inte har något) 
         {
 
             slider.gameObject.SetActive(!slider.gameObject.activeSelf);    // sätt gameObject till sin motsats-state
@@ -64,10 +72,10 @@ public class PauseMenu : MonoBehaviour
 
 
 
-            Time.timeScale = (slider.gameObject.activeSelf) ? 0f : 1f;     // Detta är kött och potatis koden för att pausa spelet. 
+            Time.timeScale = (slider.gameObject.activeSelf) ? 0f : 1f; // Kött och potatis-koden för att pausa spelet. 
                                                                     // Time.timescale styr hur snabbt spelet går. 0 = pausat, 1 = fullspeed.
                                                                     // Kedjan i syntaxen: 1. (variabel/bool) 2. ? = vad är boolen 3. Är den false returnera 0, annars 1
-                                                                    // Går också att använda t.ex till:  Om input ? > rotera min karaktär - Om inte Input > Rotera inte min karaktär
+                                                                    // Går också att använda t.ex till:  Om input > rotera min karaktär - Om inte Input > Rotera inte min karaktär
                                                                     // "?" = samma sak som en if/else sats, men ett smidigare sätt att skriva det på
             
         }

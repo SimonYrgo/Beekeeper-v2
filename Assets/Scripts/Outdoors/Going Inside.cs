@@ -8,6 +8,8 @@ public class GoingInside : MonoBehaviour
 
     public bool goingInsideHouse = false;
 
+    
+
     OpenDoor openDoor;
 
 
@@ -27,6 +29,7 @@ public class GoingInside : MonoBehaviour
             
             // openDoor.Close();
 
+            
             SceneManager.LoadScene(2);
             
 
