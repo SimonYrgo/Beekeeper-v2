@@ -35,7 +35,14 @@ public class Smoker : MonoBehaviour
 
     DoorInteract doorInteract;
 
-    
+
+
+    public AudioSource soundPlayer;
+
+    SoundLibrary soundLibrary;
+
+
+
 
 
 
@@ -75,13 +82,13 @@ public class Smoker : MonoBehaviour
 
         smokeParticleSystem.Stop();
 
-       // windSmoke.windMain = 0; // Sätter Vinden till O  
+        // windSmoke.windMain = 0; // Sätter Vinden till O  
 
-       
+        soundLibrary = GameObject.FindAnyObjectByType<SoundLibrary>();
 
 
 
-}
+    }
 
 
     private void OnTriggerEnter(Collider player) // verkar referera till Objektet som går in i triggern via dess collider 
@@ -115,7 +122,7 @@ public class Smoker : MonoBehaviour
 
                 grabbed = true;              //  > sätt grabbed till True
 
-
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[0]);
             }
         }
 
@@ -142,6 +149,8 @@ public class Smoker : MonoBehaviour
                 smokeParticleSystem.Play();                                  
                 smokerLighted = true; // kan kanske användas senare
                 messageBoard.text = "Smoker lighted, go give bees smoke.";
+
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[2]);
 
             }
 
@@ -184,6 +193,9 @@ public class Smoker : MonoBehaviour
                     doorInteract.doorCanOpen = true;
 
                     messageBoard.text = "Open Door to Shed with Q";
+
+
+                    soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[4]);
                 }
 
                 
@@ -211,7 +223,7 @@ public class Smoker : MonoBehaviour
 
             if (grabbed)
             {
-                messageBoard.text = "To líght Smoker press L";
+                messageBoard.text = "To light Smoker press L";
 
 
                 

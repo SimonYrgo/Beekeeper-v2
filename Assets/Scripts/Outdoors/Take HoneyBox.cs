@@ -25,6 +25,12 @@ public class TakeHoneyBox : MonoBehaviour
     GoingInside goingInside;
 
 
+    public AudioSource soundPlayer;
+
+    SoundLibrary soundLibrary;
+
+
+
     void Start()
     {
         honeyBoxRb = honeyBox.GetComponent<Rigidbody>();
@@ -32,6 +38,8 @@ public class TakeHoneyBox : MonoBehaviour
         honeyBoxCollider = honeyBox.GetComponent<Collider>();
 
         goingInside = GameObject.FindObjectOfType<GoingInside>();
+
+        soundLibrary = GameObject.FindAnyObjectByType<SoundLibrary>();
 
     }
 
@@ -45,6 +53,8 @@ public class TakeHoneyBox : MonoBehaviour
             {
 
                 grabbed = true;
+
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[0]);
 
 
             }

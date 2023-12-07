@@ -29,6 +29,12 @@ public class RemoveLid : MonoBehaviour
     public bool lidDropped;
 
 
+    public AudioSource soundPlayer;
+
+
+    SoundLibrary soundLibrary;
+
+    
 
     public Transform grabbingPointTransform; // ser om jag kan lägga ett gameobjekt här i, som jag kan sno en Transform från sen
 
@@ -53,7 +59,10 @@ public class RemoveLid : MonoBehaviour
         boxLidRb = boxLid.GetComponent<Rigidbody>(); // hämtar Rigidbodyn från GameObjectet i sloten boxLid
 
         boxLidCollider = boxLid.GetComponent<Collider>();
-}
+
+
+        soundLibrary = GameObject.FindAnyObjectByType<SoundLibrary>();
+    }
 
     
     private void OnTriggerEnter(Collider player) // verkar referera till Objektet som går in i triggern via dess collider 
@@ -87,9 +96,15 @@ public class RemoveLid : MonoBehaviour
                 
                 grabbed = true;
 
-            
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[0]);
+
+
             }
         }
+                
+
+                
+
 
         if (grabbed) // ska det inte vara while här i stället?  Verkar ju funka iofs
         {
@@ -130,6 +145,8 @@ public class RemoveLid : MonoBehaviour
                                                           // .. Kan ju också förstöra textPanelerna eter hand men då får man kanske error om man inte kör Try Set Active el liknande. 
 
                 lidDropped = true; // testar detta så kan jag behålla Collidern på istället. 
+
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[1]);
             }
 
 

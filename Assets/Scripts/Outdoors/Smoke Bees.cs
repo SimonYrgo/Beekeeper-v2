@@ -21,6 +21,12 @@ public class SmokeBees : MonoBehaviour
     bool canExtinguishSmoker;
 
 
+    public AudioSource soundPlayer;
+
+
+    SoundLibrary soundLibrary;
+
+
     void Start()
     {
         smoker = GameObject.FindObjectOfType<Smoker>(); // fyller dold slot med ett Smoker object
@@ -34,6 +40,8 @@ public class SmokeBees : MonoBehaviour
         canExtinguishSmoker = true;
 
         windSmoke.windMain = 0; // Sätter Vinden till O  
+
+        soundLibrary = GameObject.FindAnyObjectByType<SoundLibrary>();
 
     }
 
@@ -52,7 +60,7 @@ public class SmokeBees : MonoBehaviour
                 beeBehavoiur.beesSmoked = true; // sätter boolen i BeeBehavoiurscriptet till true
                 canSmokeBees = false;
 
-
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[3]);
 
             }
 
@@ -67,6 +75,8 @@ public class SmokeBees : MonoBehaviour
                 smoker.smokeParticleSystem.Stop();
                 smoker.smokerLighted = false; // kan kanske användas senare
                 canExtinguishSmoker = false;
+
+                soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[3]);
 
             }
 

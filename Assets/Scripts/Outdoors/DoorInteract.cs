@@ -12,9 +12,17 @@ public class DoorInteract : MonoBehaviour
 
     TakeHoneyBox takeHoneyBox;
 
+
+    public AudioSource soundPlayer;
+
+    SoundLibrary soundLibrary;
+
+
     private void Start()
     {
         takeHoneyBox = GameObject.FindObjectOfType<TakeHoneyBox>();
+
+        soundLibrary = GameObject.FindAnyObjectByType<SoundLibrary>();
 
     }
 
@@ -48,7 +56,9 @@ public class DoorInteract : MonoBehaviour
 
                     takeHoneyBox.canGetHoneyBox = true;
 
-                    
+
+                    soundPlayer.PlayOneShot(soundLibrary.soundsLevel1[5]);
+
                 }
                 else
                 {
