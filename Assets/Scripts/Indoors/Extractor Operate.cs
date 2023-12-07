@@ -21,7 +21,6 @@ public class ExtractorOperate : MonoBehaviour
 
     ExtractorInteract extractorInteract;
 
-
     void Start()
     {
             
