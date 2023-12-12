@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
             cameraSpeedText.gameObject.SetActive(false);
 
 
-            slider.onValueChanged.AddListener(ChangeCameraSpeed); // om sliderns värde ändras (onValueChanged = bool) > AddListener kollar till vad värdet ändras > Returnerar värde (och kallar metoden) ChangeCameraSpeed?  
+            slider.onValueChanged.AddListener(ChangeCameraSpeed); // om sliderns värde ändras (onValueChanged = bool) > AddListener kollar till vad värdet ändras > Returnerar värde (och kallar metoden ChangeCameraSpeed?) 
         }
     }
 

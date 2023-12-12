@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 122666894}
   - component: {fileID: 122666893}
   m_Layer: 0
-  m_Name: ReStartEmpty
+  m_Name: 'ReStartEmpty (SCRIPT) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 515470930}
   - component: {fileID: 515470929}
   m_Layer: 0
-  m_Name: ExitEmpty
+  m_Name: 'ExitEmpty (SCRIPT) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 1315212585}
   - component: {fileID: 1315212584}
   m_Layer: 0
-  m_Name: MouseManager
+  m_Name: 'MouseManagerEmpty (SCRIPT) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,7 +1243,7 @@ GameObject:
   - component: {fileID: 2054701350}
   - component: {fileID: 2054701349}
   m_Layer: 0
-  m_Name: EndSound
+  m_Name: 'EndSoundEmpty(Sound) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,9 +1366,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1717765530}
   - {fileID: 1688603105}
-  - {fileID: 2054701350}
   - {fileID: 233281332}
   - {fileID: 1357223458}
+  - {fileID: 2054701350}
   - {fileID: 122666894}
   - {fileID: 515470930}
   - {fileID: 1315212585}

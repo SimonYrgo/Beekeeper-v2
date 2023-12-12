@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 1638241643}
   - component: {fileID: 1638241642}
   m_Layer: 0
-  m_Name: StartEmpty
+  m_Name: 'StartEmpty (SCRIPT) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 1854155225}
   - component: {fileID: 1854155224}
   m_Layer: 0
-  m_Name: ExitEmpty
+  m_Name: 'ExitEmpty (SCRIPT) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
